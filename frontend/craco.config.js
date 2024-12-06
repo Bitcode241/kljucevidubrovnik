@@ -1,8 +1,11 @@
 module.exports = {
-  eslint: {
-    enable: false
-  },
-  devServer: {
-    allowedHosts: 'all',
-  },
-};
+  webpack: {
+    configure: (webpackConfig) => {
+      webpackConfig.output = {
+        ...webpackConfig.output,
+        publicPath: '/'
+      };
+      return webpackConfig;
+    }
+  }
+}
